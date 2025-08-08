@@ -1,4 +1,4 @@
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import *
 import pygame
 
 
@@ -9,6 +9,8 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+    clock = pygame.time.Clock
+    dt = 0
     # GUI window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
@@ -19,7 +21,10 @@ def main():
                 return
         screen.fill("Black")
         pygame.display.flip()
+    clock.tick(60)
 
+    dt = clock.tick.get_time() / 1000
+    return dt
 
 
 if __name__ == "__main__":
